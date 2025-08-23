@@ -1,17 +1,14 @@
 # app.py
 # -------------------------------------------------------------
-# App principal do portfólio (Streamlit) com SIDEBAR somente
-# com componentes prontos do Streamlit (sem CSS).
+# App principal do portfólio (Streamlit) com SIDEBAR estilizada
+# usando streamlit-option-menu.
 # Estrutura esperada:
 #   /sections/Home.py, Curriculo.py, Dados_F1.py, Macro_economia.py,
 #            Valuation.py, Governanca_dados.py, Analise_quant.py
 # -------------------------------------------------------------
-  git config --global user.email "brito.luucas@hotmail.com"
-  git config --global user.name "Lucas Pereira Brito"
-
-
 import importlib
 import streamlit as st
+from streamlit_option_menu import option_menu
 
 # 1) Configuração básica da página
 st.set_page_config(
@@ -21,38 +18,49 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# 2) Sidebar — apenas componentes nativos do Streamlit
+# 2) Sidebar — agora com option_menu
 with st.sidebar:
-    st.title("Main Menu")        # título simples
-    st.divider()                 # separador nativo
+    st.title("📌 Menu")
+    st.markdown("Navegue pelas seções do meu portfólio e me conheça:")
+    st.divider()
 
-    # Radio para navegação entre páginas (com emojis para dar identidade visual)
-    page = st.radio(
-        label="Navegação",
+    page = option_menu(
+        menu_title="",
         options=[
-            "🏠 Home",
-            "📄 Currículo",
-            "🏎️ Dados & F1",
-            "📊 Macro Economia",
-            "💰 Valuation",
-            "🗂️ Governança de Dados",
-            "🧪 Análise Quant",
+            "Home",
+            "Currículo",
+            "Dados & F1",
+            "Macro Economia",
+            "Valuation",
+            "Governança de Dados",
+            "Análise Quant",
         ],
-        index=0,
+        icons=[
+            "house",
+            "file-earmark-text",
+            "car-front",         
+            "bar-chart-line",
+            "currency-dollar",
+            "database",          
+            "graph-up-arrow",   
+        ], 
+        menu_icon="cast",
+        default_index=0,
+        orientation="vertical",
     )
 
-# 3) Conteúdo principal — cabeçalho geral (pode ser removido se a Home já exibir)
+# 3) Cabeçalho geral
 st.markdown("# EconomiX — Portfólio")
 
 # 4) Roteamento simples: mapeia o texto do menu para o módulo em /sections
 routes = {
-    "🏠 Home": "sections.Home",
-    "📄 Currículo": "sections.Curriculo",
-    "🏎️ Dados & F1": "sections.Dados_F1",
-    "📊 Macro Economia": "sections.Macro_economia",
-    "💰 Valuation": "sections.Valuation",
-    "🗂️ Governança de Dados": "sections.Governanca_dados",
-    "🧪 Análise Quant": "sections.Analise_quant",
+    "Home": "sections.Home",
+    "Currículo": "sections.Curriculo",
+    "Dados & F1": "sections.Dados_F1",
+    "Macro Economia": "sections.Macro_economia",
+    "Valuation": "sections.Valuation",
+    "Governança de Dados": "sections.Governanca_dados",
+    "Análise Quant": "sections.Analise_quant",
 }
 
 module_path = routes.get(page)
@@ -71,4 +79,4 @@ if module_path:
 
 # 6) Rodapé simples
 st.divider()
-st.caption("© 2025 Lucas Pereira Brito — App Streamlit. Sidebar apenas com componentes nativos.")
+st.caption("© 2025 Lucas Pereira Brito — App Streamlit.")
