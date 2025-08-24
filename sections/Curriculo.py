@@ -50,7 +50,7 @@ Atuei em **pipelines de dados**, **governança**, **modelos preditivos**, **IA g
 
 Tenho experiência em *observability, governança, qualidade e performance de dados*. Utilizando ferramentas de Data Quality, estrutura de Data Governance e Responsible AI para garantir que os projetos tenham o máximo de valor agregado e estejam de acordo com.
 
-Possuo *ólido conhecimento de negócio, especialmente em **produtos bancários** , **crédito**,**CX em Interacoes B2C e B2B**, e gosto de **transformar dados em soluções de valor**.
+Possuo *sólido conhecimento de negócio, especialmente em **produtos bancários** , **crédito**,**CX em Interacoes B2C e B2B**, e gosto de **transformar dados em soluções de valor**.
 
 Sou movido pela *paixão por dados* e pelo desejo de *contribuir para o mercado financeiro, explorando áreas como **crédito, **mesa quantitativa* e *assets* — sempre usando dados para gerar *produtividade* e *busca por transformar dados em valor*.
 """.strip()
