@@ -20,8 +20,7 @@ def _resolve_pdf():
 
 pdf_path = _resolve_pdf()
 
-# ---------- Nome + Dados (curto) ----------
-# 
+# ---------- Breve introdução  ----------
 st.markdown(
     """
 ## *Lucas Pereira Brito*
@@ -41,7 +40,7 @@ with col2:
 st.divider()
 
 # ---------- Apresentação (Resumo) ----------
-st.markdown("### 🧑🏻 Apresentação")
+st.markdown("### 🧑‍💼 Apresentação")
 st.markdown(
     """
 Engenheiro apaixonado por dados e analytics, com mais de **5 anos de experiência** no setor financeiro.
@@ -142,15 +141,19 @@ card_style = """
 <div class="card-container">
     <div class="card">
         <div class="card-title">4× PRAD</div>
-        <div class="card-desc">Reconhecimento anual por alta performance.</div>
+        <div class="card-desc">Reconhecimento por alta performance no banco itaú.</div>
     </div>
     <div class="card">
         <div class="card-title">Migração de Dados</div>
-        <div class="card-desc">On‑prem → <b>AWS</b> e <b>Tableau → QuickSight</b>.</div>
+        <div class="card-desc">On‑premises → <b>AWS</b> e <b>Tableau → QuickSight</b>.</div>
     </div>
     <div class="card">
         <div class="card-title">Redução de Fraude</div>
         <div class="card-desc">Biometria de voz + backoffice, <b>+ R$ 50MM</b> de retorno.</div>
+    </div>
+    <div class="card">
+        <div class="card-title">Governança de Dados</div>
+        <div class="card-desc">Organização e estruturação do ambiente de dados promovendo qualidade e trocas de conhecimentos.</div>
     </div>
 </div>
 """

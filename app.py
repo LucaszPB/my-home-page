@@ -12,7 +12,7 @@ from streamlit_option_menu import option_menu
 
 # 1) Configuração básica da página
 st.set_page_config(
-    page_title="EconomiX — Portfólio | Lucas Brito",
+    page_title="L.P.B. — Portfólio | Lucas Brito",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -30,19 +30,19 @@ with st.sidebar:
             "Home",
             "Currículo",
             "Dados & F1",
-            "Macro Economia",
-            "Valuation",
             "Governança de Dados",
+            "Macro Economia",
+            "Valuation (Em Breve)",
             "Análise Quant",
         ],
         icons=[
             "house",
             "file-earmark-text",
-            "car-front",         
+            "car-front",
+            "database",      
             "bar-chart-line",
             "currency-dollar",
-            "database",          
-            "graph-up-arrow",   
+            "graph-up-arrow"
         ], 
         menu_icon="cast",
         default_index=0,
@@ -50,16 +50,16 @@ with st.sidebar:
     )
 
 # 3) Cabeçalho geral
-st.markdown("# EconomiX — Portfólio")
+st.markdown("# L.P.B. — Portfólio")
 
 # 4) Roteamento simples: mapeia o texto do menu para o módulo em /sections
 routes = {
     "Home": "sections.Home",
     "Currículo": "sections.Curriculo",
     "Dados & F1": "sections.Dados_F1",
+    "Governança de Dados": "sections.Governanca_dados",
     "Macro Economia": "sections.Macro_economia",
     "Valuation": "sections.Valuation",
-    "Governança de Dados": "sections.Governanca_dados",
     "Análise Quant": "sections.Analise_quant",
 }
 
@@ -79,4 +79,5 @@ if module_path:
 
 # 6) Rodapé simples
 st.divider()
+st.caption(f"🧭 Página atual: {page or 'Home'}")
 st.caption("© 2025 Lucas Pereira Brito — App Streamlit.")
