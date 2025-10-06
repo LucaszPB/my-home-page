@@ -21,33 +21,33 @@ left, right = st.columns([2, 3], gap="small")
 with left:
     st.image("assets/avatar.png", width=180)
 with right:
-    st.title("Ola! Eu me chamo Lucas")
+    st.title("Olá! Eu me chamo Lucas")
     st.write(
-        "Sou um engenheiro mecanico no mundo financeiro, com experiencia em dados "
-        "e analises, apaixonado por Macroeconomia, Mercado Financeiro , Dados, Formula 1 e "
-        "Tecnologia. Este site e um espaco onde compartilho um pouco dessas paixoes: "
-        "projetos, analises e, claro, o meu Curriculo. A ideia e mostrar ideias em "
-        "diferentes estagios e a busca pela evolucao constante."
+        "Sou um engenheiro mecânico no mundo financeiro, com experiência em dados "
+        "e análises, apaixonado por Macroeconomia, Mercado Financeiro, Dados, Fórmula 1 e "
+        "Tecnologia. Este site é um espaço onde compartilho um pouco dessas paixões: "
+        "projetos, análises e, claro, o meu Currículo. A ideia é mostrar ideias em "
+        "diferentes estágios e a busca pela evolução constante."
     )
 
 st.divider()
 
 cards = [
     {
-        "title": "Curriculo",
+        "title": "Currículo",
         "desc": "Essa página apresenta o meu currículo de maneira online e diferente do tradicional. Use os botões no canto esquerdo da página e navegue por outras seções.",
         "id": "curriculo",
         "emoji": ":page_facing_up:",
     },
     {
-        "title": "Dados & Formula 1 (Em Breve)",
+        "title": "Dados & Fórmula 1 (Em Breve)",
         "desc": "Em breve, esta seção apresentará projetos de dados relacionados à Fórmula 1, utilizando a biblioteca FastF1 para análises de standings, telemetria e comparações.",
         "id": "dados_f1",
         "emoji": ":bar_chart: :checkered_flag:",
     },
     {
-        "title": "Governanca de Dados",
-        "desc": "Essa página apresenta um overview de dados geral com arquitetura, governança e boas práticas que aprendi e observo  ao longo da minha jornada.",
+        "title": "Governança de Dados",
+        "desc": "Essa página apresenta um overview de dados geral com arquitetura, governança e boas práticas que aprendi e observo ao longo da minha jornada.",
         "id": "governanca",
         "emoji": ":shield:",
     },
@@ -59,7 +59,7 @@ cards = [
     },
 ]
 
-st.subheader("Escolha uma trilha para explorar")
+st.subheader("Temas para explorar. Utilize o menu no canto esquerdo da página.")
 cards_per_row = 2
 for start in range(0, len(cards), cards_per_row):
     row = cards[start : start + cards_per_row]

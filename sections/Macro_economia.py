@@ -32,8 +32,8 @@ st.title("📈 Macro Brasil — Análise rápida (VAR & VECM)")
 st.markdown(
     """
 **O que esta página faz?**  
-- Explicada os indicadores macroeconômicos diretos do banco mundial ( Indicadores v'ao estar com bases globais e n'ao bases nacionais devido a API ) e traz umm gráfico com o histórico   
-- Mostra um **gráfico de linha** do indicador principal nos.  
+- Explica os indicadores macroeconômicos diretos do Banco Mundial (os indicadores vão estar com bases globais e não nacionais devido à API) e traz um gráfico com o histórico.  
+- Mostra um **gráfico de linha** do indicador principal.  
 - Executa **ADF**, **VAR** e **VECM** (decide com base em cointegração).  
 - Exibe **códigos** (ocultos em expanders), **gráficos** e **conclusões**.
     """
@@ -231,7 +231,7 @@ Modelos como VAR e VECM **precisam** saber se as séries são estacionárias. Se
 - **p-valor ≥ 0,05** → não rejeita a hipótese de raiz unitária → **provável não estacionária** ❌
 
 **Exemplo do dia a dia:**  
-Pense no **preço de um imóvel** na sua cidade: ao longo dos anos ele tende a **subir** (tendência). Já a **variação mensal** (alta/queda de um mês para o outro) costuma oscilar perto de zero. O nível de preço é **não estacionário**; a **variação** pode ser **estacionária**.
+Pense no **preço de um imóvel** na sua região: ao longo dos anos ele tende a **subir** (tendência). Já a **variação mensal** (alta/queda de um mês para o outro) costuma oscilar perto de zero. O nível de preço é **não estacionário**; a **variação** pode ser **estacionária**.
 
 **Passo a passo (prático):**  
 1) Plote a série e avalie tendência/sazonalidade.  

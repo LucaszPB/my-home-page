@@ -1,6 +1,6 @@
 #
 """
-Codigo desenvolido por lucas pereira brito 15/08/2025
+Código desenvolvido por Lucas Pereira Brito em 15/08/2025
 """
 
 import streamlit as st
@@ -59,7 +59,6 @@ st.divider()
 
 # ---------- Experiências (primeiro bloco após apresentação) ----------
 st.markdown("### 💼 Experiências Profissionais")
-1
 # Experiência atual
 st.markdown("🏦 *Itaú Unibanco — Data Analyst SR*  \n*04/2024 – Presente*")
 with st.expander("Detalhes da experiência", expanded=True):
@@ -78,13 +77,13 @@ with st.expander("Detalhes da experiência", expanded=True):
 st.markdown("🏦 *Itaú Unibanco — Analista de Dados e Analytics PL*  \n*06/2022 – 03/2024*")
 with st.expander("Detalhes da experiência", expanded=False):
     st.markdown(
-            """
+        """
         - Definição de *métricas operacionais* (tempo de atendimento, tempo de silêncio, NPS) para a central PF.  
         - Construção de *consultas/ETLs (SQL/Spark)* para painéis operacionais e relatórios periódicos.  
         - Apoio à *padronização de dicionário de dados* e regras de qualidade para reduzir divergências.  
         - *Automação de rotinas* que reduziu esforço manual de extrações recorrentes.
         """
-        )
+    )
 
 st.markdown("🏦 *Itaú Unibanco — Analista de CX JR*  \n*10/2020 – 05/2022*")
 with st.expander("Detalhes da experiência", expanded=False):
@@ -160,13 +159,13 @@ with cA:
     st.markdown("- *VBA* — 🔵⚪⚪")
 
     st.subheader("Plataformas & Dataviz")
-    st.markdown("- *AWS (Athena, S3, Glue, QuickSight)*- 🔵🔵🔵")
-    st.markdown("- *Hadoop* - 🔵🔵⚪")
-    st.markdown("- *SQL Server* - 🔵⚪⚪")
-    st.markdown("- *SAS* - 🔵🔵⚪")
-    st.markdown("- *Git* - 🔵⚪⚪")
-    st.markdown("- *Tableau* - 🔵🔵🔵")
-    st.markdown("- *Power BI*- 🔵🔵⚪")
+    st.markdown("- *AWS (Athena, S3, Glue, QuickSight)* — 🔵🔵🔵")
+    st.markdown("- *Hadoop* — 🔵🔵⚪")
+    st.markdown("- *SQL Server* — 🔵⚪⚪")
+    st.markdown("- *SAS* — 🔵🔵⚪")
+    st.markdown("- *Git* — 🔵⚪⚪")
+    st.markdown("- *Tableau* — 🔵🔵🔵")
+    st.markdown("- *Power BI* — 🔵🔵⚪")
 
 with cB:
     st.subheader("IA & Analytics")
@@ -175,7 +174,7 @@ with cB:
     st.markdown("- *ML (incl. deep learning)*")
     st.markdown("- *Speech Analysis*")
 
-    st.subheader("Conhecimentos e Práticas")
+    st.subheader("Conhecimentos & Práticas")
     st.markdown("- *ETL, ELT*")
     st.markdown("- *Data Quality*")
     st.markdown("- *Data Governance*")
@@ -221,15 +220,15 @@ st.markdown(
 
 st.divider()
 # ---------- Botão para baixar o PDF ----------
-    # Botão de download do PDF.
+# Botão de download do PDF.
 if pdf_path.exists():
     st.download_button(
-         label="⬇️ Baixar currículo (PDF)",
-         data=pdf_path.read_bytes(),
-         file_name=pdf_path.name,
-         mime="application/pdf",
-         use_container_width=True,
-)
+        label="⬇️ Baixar currículo (PDF)",
+        data=pdf_path.read_bytes(),
+        file_name=pdf_path.name,
+        mime="application/pdf",
+        use_container_width=True,
+    )
 else:
     st.info("PDF do currículo não encontrado em assets/.")
 

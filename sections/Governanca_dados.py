@@ -12,14 +12,14 @@ st.set_page_config(
 
 st.title("🧭 Arquitetura & Governança de Dados — Visão Prática")
 st.caption(
-    "As explicações foram feitas com base em minha experiência prática em projetos de dados e expecializações na área."
+    "As explicações foram feitas com base em minha experiência prática em projetos de dados e especializações na área."
 )
 
 # Hero / Intro
 with st.container():
     col1, col2 = st.columns([1.2, 1])
     with col1:
-        st.subheader(" que essa página está falando?")
+        st.subheader("O que essa página está falando?")
         st.write(
             """
             **Objetivo:** alinhar conceitos de arquitetura de dados, papéis & responsabilidades
