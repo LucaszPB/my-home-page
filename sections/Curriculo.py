@@ -45,13 +45,13 @@ st.markdown(
     """
 Engenheiro apaixonado por dados e analytics, com mais de **5 anos de experiência** no setor financeiro.
 
-Atuei em **pipelines de dados**, **governança**, **modelos preditivos**, **IA generativa** e **speech analytics** para clientes *PF* e *PJ*.
+Atuação em **pipelines de dados**, **governança**, **modelos preditivos**, **IA generativa** e **speech analytics** para clientes *PF* e *PJ*.
 
-Tenho experiência em *observability, governança, qualidade e performance de dados*. Utilizando ferramentas de Data Quality, estrutura de Data Governance e Responsible AI para garantir que os projetos tenham o máximo de valor agregado e estejam de acordo com.
+Experiência em *observability, governança, qualidade e performance de dados*, utilizando ferramentas de Data Quality, estrutura de Data Governance e Responsible AI para garantir valor agregado e conformidade nos projetos.
 
-Possuo *sólido conhecimento de negócio, especialmente em **produtos bancários** , **crédito**,**CX em Interacoes B2C e B2B**, e gosto de **transformar dados em soluções de valor**.
+Sólido conhecimento de negócio, especialmente em **produtos bancários**, **crédito**, **CX em interações B2C e B2B**, com foco em transformar dados em soluções de valor.
 
-Sou movido pela *paixão por dados* e pelo desejo de *contribuir para o mercado financeiro, explorando áreas como **crédito, **mesa quantitativa* e *assets* — sempre usando dados para gerar *produtividade* e *busca por transformar dados em valor*.
+Movido pela *paixão por dados* e pelo desejo de contribuir para o mercado financeiro, explorando áreas como **crédito**, *assets*, *experiência do cliente* — sempre usando dados para gerar *produtividade* e transformar dados em valor.
 """.strip()
 )
 
