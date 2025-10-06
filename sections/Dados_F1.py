@@ -3,7 +3,7 @@ import streamlit as st
 import time
 import random
 
-st.set_page_config(page_title="Em breve", page_icon="⏳", layout="centered")
+st.set_page_config(page_title="Em breve", page_icon="⏳", layout="wide")
 
 # Estado
 if "tentativas" not in st.session_state:

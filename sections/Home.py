@@ -40,14 +40,14 @@ cards = [
         "emoji": ":page_facing_up:",
     },
     {
-        "title": "Dados & Formula 1",
-        "desc": "Projetos de dados com FastF1: standings, telemetria e analises comparativas.",
+        "title": "Dados & Formula 1 (Em Breve)",
+        "desc": "Em breve, esta seção apresentará projetos de dados relacionados à Fórmula 1, utilizando a biblioteca FastF1 para análises de standings, telemetria e comparações.",
         "id": "dados_f1",
         "emoji": ":bar_chart: :checkered_flag:",
     },
     {
         "title": "Governanca de Dados",
-        "desc": "Padroes, papeis e qualidade de dados para decisao baseada em informacao confiavel.",
+        "desc": "Essa página apresenta um overview de dados geral com arquitetura, governança e boas práticas que aprendi e observo  ao longo da minha jornada.",
         "id": "governanca",
         "emoji": ":shield:",
     },
