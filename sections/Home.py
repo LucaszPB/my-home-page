@@ -21,10 +21,10 @@ left, right = st.columns([2, 3], gap="small")
 with left:
     st.image("assets/avatar.png", width=180)
 with right:
-    st.title("Ola! Eu sou o Lucas")
+    st.title("Ola! Eu me chamo Lucas")
     st.write(
-        "Ola! Sou um engenheiro mecanico no mundo financeiro, com experiencia em dados "
-        "e analises, apaixonado por Formula 1, Macroeconomia, Mercado Financeiro e "
+        "Sou um engenheiro mecanico no mundo financeiro, com experiencia em dados "
+        "e analises, apaixonado por Macroeconomia, Mercado Financeiro , Dados, Formula 1 e "
         "Tecnologia. Este site e um espaco onde compartilho um pouco dessas paixoes: "
         "projetos, analises e, claro, o meu Curriculo. A ideia e mostrar ideias em "
         "diferentes estagios e a busca pela evolucao constante."
