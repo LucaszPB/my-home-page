@@ -65,12 +65,12 @@ st.markdown("🏦 *Itaú Unibanco — Data Analyst SR*  \n*04/2024 – Presente*
 with st.expander("Detalhes da experiência", expanded=True):
     st.markdown(
         """
-- Consolidei *visão única de carteira PJ* (CNPJ, segmento, produtos, limite vs utilização*) utilizada em rituais executivos do comercial PJ (resultados: LAIR, ROE).
-- *Co-liderança* na transição de bases analíticas *on-prem (SAS, SQL) → AWS (Glue, Athena, S3)*, padronizando queries e pipelines para preservar séries históricas relevantes ao time comercial.
-- *Liderança em IA Generativa* na comunidade de ferramentas do time comercial PJ.
-- *Mentoria de novos analistas* em práticas de análise de dados, governança e qualidade, promovendo uma cultura de dados sólida.
-- *Desenvolvimento de dashboards* para monitoramento de performance comercial, utilizando *AWS QuickSight*.
-- *Uso de agile(Scrum)* em projetos, priorizando entregas de alto impacto e alinhamento com stakeholders.
+- Criação de insights e recomendações com IA para apoiar gerentes PJ na gestão de carteira.
+- Co-liderança da migração analítica on-premises (SAS/SQL) → AWS (Glue, Athena), com padronização de queries e pipelines para preservar séries históricas.
+- Responsável pela incubadora de IA Generativa na comunidade de ferramentas do time comercial PJ.
+- Exploração de ia generativa (RAG) e orquestração para dar insights de carteira para o gerente PJ afim de garantir a máxima performance.
+- Estruturação de materiais executivos para superintendência e diretoria comercial PJ, trazendo direcionamentos data-driven.
+- Atuação em agendas de Analytics Lead e Data Lead (2024–2025), como ponto focal na disseminação da cultura de dados para a comunidade de atendimento.
         """.strip()
     )
 
@@ -111,53 +111,42 @@ st.divider()
 # ---------- Conquistas ----------
 st.markdown("### 🏆 Conquistas-Chave")
 
-# Tentando me aventurar em HTML, hoje com ajuda do ChatGPT ficou mais fácil hahaha
-card_style = """
-<style>
-.card-container {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-.card {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 1.2rem;
-    flex: 1;
-    min-width: 0;
-}
-.card-title {
-    font-weight: bold;
-    color: #003A88;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-.card-desc {
-    font-size: 0.98rem;
-    color: #000000;
-}
-</style>
-<div class="card-container">
-    <div class="card">
-        <div class="card-title">4× PRAD</div>
-        <div class="card-desc">Reconhecimento por alta performance no banco itaú.</div>
-    </div>
-    <div class="card">
-        <div class="card-title">Migração de Dados</div>
-        <div class="card-desc">On‑premises → <b>AWS</b> e <b>Tableau → QuickSight</b>.</div>
-    </div>
-    <div class="card">
-        <div class="card-title">Redução de Fraude</div>
-        <div class="card-desc">Biometria de voz + backoffice, <b>+ R$ 50MM</b> de retorno.</div>
-    </div>
-    <div class="card">
-        <div class="card-title">Governança de Dados</div>
-        <div class="card-desc">Organização e estruturação do ambiente de dados promovendo qualidade e trocas de conhecimentos.</div>
-    </div>
-</div>
-"""
-st.markdown(card_style, unsafe_allow_html=True)
+achievements = [
+    {
+        "title": "4× PRAD",
+        "desc": "Reconhecimento por alta performance no Banco Itaú.",
+    },
+    {
+        "title": "Jornada do Cliente",
+        "desc": (
+            "Mapeamento de jornada para ofertas de crédito imobiliário, combinando "
+            "dados transacionais e insights de atendimento para gerar abordagens "
+            "mais relevantes."
+        ),
+    },
+    {
+        "title": "Redução de Fraude",
+        "desc": "Biometria de voz + backoffice, mais de R$ 50MM de retorno.",
+    },
+    {
+        "title": "Governança de Dados",
+        "desc": (
+            "Estruturação de ambientes, padrões e qualidade, aliando a migração "
+            "on-premises → AWS e Tableau → QuickSight."
+        ),
+    },
+]
+
+cards_per_row = 2
+for start in range(0, len(achievements), cards_per_row):
+    row = achievements[start : start + cards_per_row]
+    columns = st.columns(len(row), gap="large")
+    for column, card in zip(columns, row):
+        with column:
+            with st.container(border=True):
+                st.markdown(f"#### :blue[{card['title']}]")
+                st.write(card["desc"])
+
 st.divider()
 
 # ---------- Habilidades ----------
@@ -201,7 +190,7 @@ st.divider()
 st.markdown("### 🎓 Educação")
 st.markdown(
     """
-- *FGV* — Finanças Internacionais e Macroeconomia *(em andamento)*
+- *FGV* — Finanças Internacionais e Macroeconomia
 - *FIAP (MBA)* — Business Intelligence e Analytics  
 - *FEI (Graduação)* — Engenharia Mecânica  
 - *IFSP (Técnico Integrado)* — Mecânica

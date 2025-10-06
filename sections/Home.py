@@ -1,110 +1,72 @@
-# sections/Home.py
-# Home melhorada: layout com componentes nativos do Streamlit (sem CSS),
-# cards responsivos, cabeçalho com quick actions e download de CV.
-# Navegação simples via st.session_state + query params.
+"""Home page layout built only with native Streamlit components."""
 
 import streamlit as st
-from pathlib import Path
 
-# ------------- Configurações iniciais -------------
-st.set_page_config(
-    page_title="Home - Meu Mini Site",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
 
 if "page" not in st.session_state:
     st.session_state["page"] = "home"
 
-def navigate_to(page_id: str):
-    """Define a página atual e atualiza os query params, forçando rerender."""
+
+def navigate_to(page_id: str) -> None:
+    """Update current page and refresh the app."""
     st.session_state["page"] = page_id
     try:
-        # API atual (1.29+): st.query_params
         st.query_params.update({"page": page_id})
-    except Exception:
-        # Fallback se estiver usando versão antiga do Streamlit
+    except Exception:  # st.query_params is available only on recent Streamlit versions
         st.experimental_set_query_params(page=page_id)
     st.rerun()
 
-# ------------- Cabeçalho / Hero -------------
+
 left, right = st.columns([2, 3], gap="small")
-
 with left:
-    # Avatar (substitua pela sua imagem estática local se preferir)
-    st.image(r"assets\avatar.png", width=180)
-
+    st.image("assets/avatar.png", width=180)
 with right:
-    st.title("Olá! Eu sou o Lucas 👋")
-    st.markdown(
-        """
-        Olá! Sou **Lucas**, um engenheiro de dados e análises, apaixonado por **Fórmula 1**, **Macroeconomia**, **História** e **Tecnologia**. 🚀  
-        Este site é um espaço onde compartilho um pouco dessas paixões: projetos, análises e, claro, o meu **Currículo**.  
-
-        Vale lembrar: você pode encontrar ideias em diferentes estágios, alguns acertos, alguns erros, mas todos eles refletem algo essencial sobre mim:  
-        a busca pela **evolução constante**. 
-        """
+    st.title("Ola! Eu sou o Lucas")
+    st.write(
+        "Ola! Sou um engenheiro mecanico no mundo financeiro, com experiencia em dados "
+        "e analises, apaixonado por Formula 1, Macroeconomia, Mercado Financeiro e "
+        "Tecnologia. Este site e um espaco onde compartilho um pouco dessas paixoes: "
+        "projetos, analises e, claro, o meu Curriculo. A ideia e mostrar ideias em "
+        "diferentes estagios e a busca pela evolucao constante."
     )
 
 st.divider()
 
-# ------------- Definição dos cards -------------
 cards = [
     {
-        "title": "Currículo",
-        "desc": "Experiências, conquistas e formações — um panorama do meu lado profissional. Fique a vontade para explorar",
+        "title": "Curriculo",
+        "desc": "Essa página apresenta o meu currículo de maneira online e diferente do tradicional. Use os botões no canto esquerdo da página e navegue por outras seções.",
         "id": "curriculo",
-        "emoji": "📄"
+        "emoji": ":page_facing_up:",
     },
     {
-        "title": "Dados & Fórmula 1",
-        "desc": "Projetos de dados com FastF1: standings, telemetria e análises comparativas.",
+        "title": "Dados & Formula 1",
+        "desc": "Projetos de dados com FastF1: standings, telemetria e analises comparativas.",
         "id": "dados_f1",
-        "emoji": "📊🏁"
+        "emoji": ":bar_chart: :checkered_flag:",
     },
     {
-        "title": "Governança de Dados",
-        "desc": "Padrões, papéis e qualidade de dados: bases confiáveis para decisões melhores.",
+        "title": "Governanca de Dados",
+        "desc": "Padroes, papeis e qualidade de dados para decisao baseada em informacao confiavel.",
         "id": "governanca",
-        "emoji": "🛡️"
-    },
-    {
-        "title": "Análise Quantitativa",
-        "desc": "(Em breve)",
-        "id": "quant",
-        "emoji": "📉📈"
+        "emoji": ":shield:",
     },
     {
         "title": "Macroeconomia",
         "desc": "Indicadores, regimes cambiais e leituras aplicadas ao mercado financeiro.",
         "id": "macro",
-        "emoji": "📊🌍"
-    }
+        "emoji": ":bar_chart: :earth_americas:",
+    },
 ]
 
-# ------------- Renderização dos cards (3 por linha) -------------
-def render_cards_grid(items, cols_per_row=3):
-    row = []
-    for i, card in enumerate(items, start=1):
-        row.append(card)
-        if i % cols_per_row == 0 or i == len(items):
-            cols = st.columns(len(row), vertical_alignment="center")
-            for c, card_data in zip(cols, row):
-                with c:
-                    with st.container(border=True):
-                        st.markdown(f"### {card_data['emoji']} {card_data['title']}")
-                        st.write(card_data["desc"])
-                        # CTA primário
-                        st.button(
-                            f"Abrir {card_data['title']}",
-                            key=f"btn_{card_data['id']}",
-                            use_container_width=True,
-                            on_click=navigate_to,
-                            args=(card_data["id"],)
-                        )
-            row = []
-
-render_cards_grid(cards, cols_per_row=3)
-
-
-
+st.subheader("Escolha uma trilha para explorar")
+cards_per_row = 2
+for start in range(0, len(cards), cards_per_row):
+    row = cards[start : start + cards_per_row]
+    columns = st.columns(len(row), gap="large")
+    for column, card in zip(columns, row):
+        with column:
+            with st.container(border=True):
+                st.markdown(f"### {card['emoji']}  {card['title']}")
+                st.write(card["desc"])
+                

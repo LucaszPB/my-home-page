@@ -88,45 +88,47 @@ indicador_principal = st.selectbox("📌 Indicador principal (gráfico + explica
 # Explicações mais elaboradas dos indicadores macroeconomicos 
 explicacoes = {
   'Inflação (CPI, % a.a.)': """Mostra quanto, em média, os preços pagos pelas famílias subiram nos últimos 12 meses.
-- Origem do número: Banco Mundial (API : "FP.CPI.TOTL.ZG")
-- Por que importa? Quando os preços sobem mais rápido que o salário, o dinheiro “encolhe”. Inflação baixa e estável facilita planejar compras e contas.
-- De onde vem: choques de oferta (energia, alimentos, câmbio) ou demanda forte (crédito, renda, emprego).
-- Política: inflação alta e persistente costuma levar o Banco Central a subir juros; controlada, abre espaço para cortar.
-- Regra prática: olhe reajustes de aluguel, supermercado e contas — são o “termômetro” do seu custo de vida.
-- Exemplo do dia a dia: se gás, arroz e luz sobem 8% no ano e seu salário aumenta 5%, você consegue comprar menos com o mesmo dinheiro.""",
+- Origem do número: Banco Mundial (API: "FP.CPI.TOTL.ZG")
+- Por que importa? Se os preços sobem mais rápido que o salário, o poder de compra cai. Inflação baixa e previsível facilita planejar compras, contratos e investimentos.
+- De onde vem: choques de oferta (energia, alimentos, câmbio) e/ou demanda aquecida (crédito, renda, emprego). Itens administrados e alimentação costumam gerar oscilações.
+- Política: inflação alta e persistente tende a levar o Banco Central a subir juros; inflação ancorada abre espaço para cortes.
+- Leitura prática: acompanhe aluguel, mercado (feira/supermercado) e contas de serviços — são bons termômetros do seu custo de vida.
+- Exemplo do dia a dia: se gás, arroz e luz sobem ~8% no ano e seu salário aumenta 5%, o orçamento aperta: você compra menos com o mesmo dinheiro.""",
 
-  'PIB real — crescimento (% a.a.)': """É a variação de tudo o que o país produz, já descontada a inflação.
-- Origem do número: Banco Mundial (API : "NY.GDP.MKTP.KD.ZG")
-- O que indica: acima de 0% = economia crescendo; abaixo de 0% = encolhendo (risco de recessão).
-- O que puxa: consumo das famílias, investimentos das empresas, gasto do governo e exportações líquidas (exportações – importações).
-- Por que importa: influencia emprego, renda, lucro das empresas e arrecadação de impostos.
-- Uso rápido: junto com inflação e juros, ajuda a entender em que fase do ciclo estamos (aquecendo ou esfriando).
-- Exemplo do dia a dia: PIB em alta costuma trazer mais vagas e obras; em baixa, comércio mais fraco e contratações lentas.""",
+  'PIB real — crescimento (% a.a.)': """Variação do total produzido pelo país, já descontada a inflação (crescimento “de verdade”).
+- Origem do número: Banco Mundial (API: "NY.GDP.MKTP.KD.ZG")
+- O que indica: acima de 0% = economia expandindo; abaixo de 0% = retraindo (sinal de recessão se persiste).
+- Motores do PIB: consumo das famílias, investimento das empresas, gasto público e saldo externo (exportações – importações).
+- Por que importa: orienta emprego, renda, lucros, arrecadação e a percepção de risco do país.
+- Uso rápido: combine com inflação e juros para ler o ciclo (aquecendo, estável ou esfriando) e ajustar decisões de crédito e investimento.
+- Exemplo do dia a dia: PIB em alta costuma trazer mais vagas, obras e vendas; em baixa, comércio mais fraco e contratações lentas.""",
 
-  'Desemprego (% força de trabalho)': """Percentual de pessoas que querem trabalhar e estão procurando, mas não encontram (entre quem está na força de trabalho).
-- Origem do número: Banco Mundial (API : "SL.UEM.TOTL.ZS")
-- Tipos: friccional (troca de emprego), estrutural (falta de qualificação/ajuste regional) e cíclico (economia fraca).
-- Atenção: desalentados (quem desistiu de procurar) não entram na taxa; subocupados e informalidade podem esconder fragilidades.
-- Relação com o PIB: crescimento tende a reduzir desemprego com defasagem; queda muito forte do desemprego pode pressionar salários e preços.
-- Leitura prática: observe também taxa de participação e subutilização para ter o quadro completo.
-- Exemplo do dia a dia: sua amiga pede demissão e passa 2 meses procurando — enquanto procura, ela entra na estatística de desemprego.""",
+  'Desemprego (% força de trabalho)': """Parcela de pessoas na força de trabalho que querem e procuram emprego, mas ainda não encontraram.
+- Origem do número: Banco Mundial (API: "SL.UEM.TOTL.ZS")
+- Tipos: friccional (troca de emprego), estrutural (descompasso de qualificação/região) e cíclico (atividade fraca).
+- Atenção: desalentados (quem desistiu de procurar) não entram na taxa; subocupação e informalidade podem mascarar fragilidades.
+- Relação com o PIB: crescimento reduz desemprego com defasagem; queda muito forte do desemprego pode pressionar salários e, depois, preços.
+- Leitura prática: olhe também participação na força de trabalho e subutilização para ter um retrato completo do mercado de trabalho.
+- Exemplo do dia a dia: sua amiga pede demissão e passa 2 meses procurando — enquanto busca, ela entra na estatística de desemprego.""",
 
-  'Conta Corrente (% do PIB)': """“Placar” das trocas do país com o exterior: bens e serviços, rendas (juros/lucros) e transferências.
-- Origem do número: Banco Mundial (API : "BN.CAB.XOKA.GD.ZS")
-- Leitura: déficit = país gasta mais do que recebe e precisa de financiamento externo; superávit = recebe mais do que gasta.
-- Risco: déficits altos e persistentes, financiados por dívida de curto prazo, aumentam a vulnerabilidade a choques.
-- Qualidade do financiamento: IED (fábricas/projetos) é mais saudável que dívida de curto prazo.
-- Efeito prático: resultados melhores tendem a aliviar o câmbio; piores podem pressionar dólar/turismo/eletrônicos.
-- Exemplo do dia a dia: como uma família — se gasta mais do que ganha, precisa pegar empréstimo; se ganha mais, consegue poupar e investir.""",
+  'Conta Corrente (% do PIB)': """Placar das trocas do país com o exterior: bens e serviços, rendas (juros/lucros) e transferências.
+- Origem do número: Banco Mundial (API: "BN.CAB.XOKA.GD.ZS")
+- Leitura: déficit = país gasta mais do que recebe e precisa de financiamento externo; superávit = entra mais do que sai.
+- Risco: déficits altos e persistentes, cobertos por dívida de curto prazo, aumentam a vulnerabilidade a choques e a volatilidade cambial.
+- Qualidade do financiamento: IED (fábricas/projetos) é mais estável que dívida de curto prazo e tende a apoiar produtividade.
+- Efeito prático: contas externas melhores aliviam o câmbio; piores tendem a pressionar dólar, turismo e eletrônicos importados.
+- Exemplo do dia a dia: como uma família — se gasta mais do que ganha, recorre a crédito; se sobra, poupa e investe com folga.""",
 
-  'Juros reais (% a.a.)': """Taxa de juros depois de descontar a inflação (aprox.: juros nominais – inflação esperada/realizada).
-- Origem do número: Banco Mundial (API : "FR.INR.RINR")
-- Por que importa? Define o custo “de verdade” do crédito e o ganho real de quem poupa/investe.
-- Política: é a principal alavanca do Banco Central; acima do juro “neutro” esfria a economia, abaixo estimula.
-- Medição: ex-ante (usa expectativas de inflação) ou ex-post (usa a inflação que já ocorreu).
-- Regra prática: juros reais mais altos deixam financiamentos mais pesados ao longo do tempo; mais baixos aliviam o orçamento.
-- Exemplo do dia a dia: se o empréstimo custa 10% ao ano e a inflação é 6%, o juro real é ~4% — ainda pesa no bolso conforme os meses passam."""
+  'Juros reais (% a.a.)': """Taxa de juros após descontar a inflação (aprox.: juros nominais – inflação esperada/realizada).
+- Origem do número: Banco Mundial (API: "FR.INR.RINR")
+- Por que importa? É o “custo verdadeiro” do crédito e o ganho real de quem poupa/investe; baliza decisões de financiamento e alocação.
+- Política: principal alavanca do Banco Central; acima do juro “neutro” esfria a economia, abaixo estimula atividade e crédito.
+- Medição: ex-ante (usa expectativas) ajuda a decidir hoje; ex-post (usa inflação realizada) descreve o que passou.
+- Regra prática: juros reais altos encarecem financiamentos ao longo do tempo; mais baixos aliviam o orçamento e favorecem investimentos produtivos.
+- Exemplo do dia a dia: empréstimo a 10% a.a. com inflação de 6% → juro real ~4% — o saldo devedor “cresce” em termos reais e pesa no bolso mês a mês.
+- OBS: O número da taxa de juros vinda da API não é a mesma da SELIC em questão de valor absoluto, mas a diferença entre elas é praticamente constante ao longo do tempo. Portanto, para análises de séries temporais e modelos VAR/VECM, essa diferença constante não afeta os resultados."""
 }
+
 
 with st.expander("ℹ️ Sobre o indicador selecionado", expanded=True):
     # Exibe um resumo explicativo do indicador selecionado pelo usuário.

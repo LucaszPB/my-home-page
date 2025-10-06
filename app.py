@@ -29,11 +29,11 @@ with st.sidebar:
         options=[
             "Home",
             "Currículo",
-            "Dados & F1",
+            "Dados & F1 (Em Breve)",
             "Governança de Dados",
             "Macro Economia",
-            "Valuation (Em Breve)",
-            "Análise Quant",
+         #   "Valuation (Em Breve)",
+         #   "Análise Quant",
         ],
         icons=[
             "house",
@@ -41,8 +41,8 @@ with st.sidebar:
             "car-front",
             "database",      
             "bar-chart-line",
-            "currency-dollar",
-            "graph-up-arrow"
+          #  "currency-dollar",
+          #  "graph-up-arrow"
         ], 
         menu_icon="cast",
         default_index=0,
@@ -56,11 +56,11 @@ st.markdown("# L.P.B. — Portfólio")
 routes = {
     "Home": "sections.Home",
     "Currículo": "sections.Curriculo",
-    "Dados & F1": "sections.Dados_F1",
+    "Dados & F1 (Em Breve)": "sections.Dados_F1",
     "Governança de Dados": "sections.Governanca_dados",
     "Macro Economia": "sections.Macro_economia",
-    "Valuation": "sections.Valuation",
-    "Análise Quant": "sections.Analise_quant",
+    # "Valuation": "sections.Valuation",
+    # "Análise Quant": "sections.Analise_quant",
 }
 
 module_path = routes.get(page)
