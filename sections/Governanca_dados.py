@@ -285,13 +285,13 @@ with aba3:
 ]
 )
 
-st.subheader("Opinião pessoal")
+    st.subheader("Opinião pessoal")
 
-st.write("""
-    Nem todas as empresas possuem essa granularidade de papéis; algumas empresas ou setores contam apenas com o analista de dados, que acaba sendo um faz-tudo, assumindo o papel de todos. Ao fazer isso, cria-se um gargalo enorme, pois o analista de dados não tem a expertise necessária e acaba fazendo fluxos confusos e impossíveis de replicar, gerando um ambiente onde a documentação se torna inviável devido ao volume de demandas que recaem sobre esse profissional.
+    st.write("""
+        Nem todas as empresas possuem essa granularidade de papéis; algumas empresas ou setores contam apenas com o analista de dados, que acaba sendo um faz-tudo, assumindo o papel de todos. Ao fazer isso, cria-se um gargalo enorme, pois o analista de dados não tem a expertise necessária e acaba fazendo fluxos confusos e impossíveis de replicar, gerando um ambiente onde a documentação se torna inviável devido ao volume de demandas que recaem sobre esse profissional.
 
-    Outro ponto é como o analista de dados coexiste com o engenheiro de analytics. Eu acredito que, no futuro, todos os analistas de dados irão se tornar engenheiros de analytics, pois o engenheiro de analytics traduz o problema de negócio em dados com maior maestria e tecnicidade. Porém, como é uma profissão super recente, ainda vão existir casos onde os dois papéis se divergem. Então, o engenheiro de analytics acaba cuidando do pipeline de dados (se tornando um engenheiro de dados) e o analista de dados cuida da parte de BI, virando o construtor dos painéis e deixando de lado a análise dos dados para se tornar um construtor.
-""")
+        Outro ponto é como o analista de dados coexiste com o engenheiro de analytics. Eu acredito que, no futuro, todos os analistas de dados irão se tornar engenheiros de analytics, pois o engenheiro de analytics traduz o problema de negócio em dados com maior maestria e tecnicidade. Porém, como é uma profissão super recente, ainda vão existir casos onde os dois papéis se divergem. Então, o engenheiro de analytics acaba cuidando do pipeline de dados (se tornando um engenheiro de dados) e o analista de dados cuida da parte de BI, virando o construtor dos painéis e deixando de lado a análise dos dados para se tornar um construtor.
+    """)
 # --------------------------------------
 # ABA 4 — Governança de Dados
 # --------------------------------------
@@ -349,13 +349,13 @@ with aba5:
           subgraph cluster_backend {
             label="APIs & Transacional"; color=lightgrey;
             api[ label="APIs REST/GraphQL\n(Dev Back‑end)" ];
-            txdb[ label="Banco Transacional (SOR)\n(Back‑end/DBA)" ];
+            txdb[ label="Banco Transacional\n(Back‑end/DBA)" ];
           }
 
           subgraph cluster_data {
             label="Plataforma de Dados"; color=lightgrey;
             ingest[ label="Ingestão (batch/CDC/stream)\n(Eng. de Dados)" ];
-            bronze[ label="Bronze (Raw/Landing)" ];
+            bronze[ label="Bronze/SOR (Raw/Landing)" ];
             silver[ label="Silver (Cleansed/Conformed)" ];
             gold[ label="Gold (Curated/DW) — SOT" ];
             spec[ label="SPEC (Marts/Serviços)" ];
@@ -389,7 +389,7 @@ with aba5:
 
     st.graphviz_chart(dot, use_container_width=True)
 
-    st.markdown("### Narrativa (end‑to‑end)")
+    st.markdown("### Descrição do fluxo")
     st.markdown(
         """
         1. **Usuário usa o app** (ex.: solicitação de limite/transferência). O **Front‑end** instrumenta eventos.  

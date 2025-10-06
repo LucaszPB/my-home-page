@@ -17,7 +17,7 @@ from statsmodels.tsa.vector_ar.vecm import coint_johansen, VECM  # Cointegraçã
 
 # ======= CONFIG =======
 # AVISO: Se sua estrutura de projeto for diferente, estou saindo da estrutura.
-DATA_DIR = r"assets\macro_br"
+DATA_DIR = os.path.join("assets", "macro_br")
 MERGED_FILE = os.path.join(DATA_DIR, "merged_macro_br.csv")
 # ======================
 
